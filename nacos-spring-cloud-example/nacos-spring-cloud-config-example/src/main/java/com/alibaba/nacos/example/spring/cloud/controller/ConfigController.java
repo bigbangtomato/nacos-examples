@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigController {
 
     @Value("${useLocalCache:false}")
-    private boolean useLocalCache;
+    private String useLocalCache;
 
     /**
      * http://localhost:8080/config/get
      */
     @RequestMapping("/get")
-    public boolean get() {
+    public String get() {
         return useLocalCache;
     }
 }
